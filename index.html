@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h3>articles</h3>
+
+<ul>
+{% for doc in site.articles %}
+  <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+{% endfor %}
+</ul>

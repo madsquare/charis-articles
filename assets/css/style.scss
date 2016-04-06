@@ -1,0 +1,232 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import 'normalize';
+@import 'response';
+@import 'http://fonts.googleapis.com/css?family=Roboto';
+@import 'http://fonts.googleapis.com/css?family=Roboto+Condensed';
+
+$maxwidth: 1020px;
+$boxpadding: 10px;
+$screen-md-min: 992px;
+
+.container {
+  margin: 0 auto;
+  padding: 1em ($boxpadding + 5px);
+  max-width: $maxwidth;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.article-wrapper,
+.article-box {
+  border: 2px solid #000;
+}
+.article-wrapper {
+  padding: $boxpadding 0;
+}
+.article-box {
+  margin-left: -($boxpadding + 4);
+  margin-right: -($boxpadding + 4);
+}
+
+.article {
+  margin: 0 2em;
+  padding-bottom: 2em;
+  font-size: 16px;
+  font-family: Roboto, 'helvetica neue', sans-serif;
+  line-height: 2em;
+  color: #23242E;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.article .header {
+  padding-top: 1em;
+  text-align: center;
+
+  h2 {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+  }
+  h1 {
+    line-height: 1.3em;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+  }
+
+  .desc {
+    font-family: 'Roboto Condensed';
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 1em;
+    border-top: 2px solid #D8D8D8;
+    line-height: 1.2em;
+
+    .editor {
+      border-right: 1px solid #E9E9E9;
+      padding: 0 10px 0 0;
+      display: inline-block;
+      letter-spacing: 0.1em;
+      margin: 0 10px 0 0;
+
+      img {
+        width: 1.2em;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+    }
+    .date {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: inline-block;
+      color: #A89379;
+    }
+  }
+}
+
+.article .content {
+  margin-top: 5em;
+
+  img {
+    max-width: 100%;
+  }
+
+  ol.note {
+    margin: 0;
+    padding: 0;
+  }
+  ol.note li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 2.2em;
+    font-size: 0.9em;
+
+    label {
+      margin-right: 5px;
+      font-family: 'helvetica neue';
+      color: #CFCFCF;
+    }
+  }
+
+  p.para {
+    margin: 1.5em 0;
+    white-space: pre-wrap;
+  }
+
+  hr {
+    margin: 1.5em 0;
+    border-top: none;
+    border-bottom: 1px solid #D1D1D1;
+  }
+
+  blockquote {
+    margin: 0 1em;
+    padding: 1em 0 1.4em;
+    font-family: Times;
+    font-style: italic;
+    font-size: 1.7em;
+    font-weight: 200;
+    line-height: 1.5em;
+    text-align: center;
+    color: #262626;
+
+    .line {
+      padding: 1em 0 1.5em;
+      line-height: 0.1em;
+      font-size: 0.7em;
+      font-weight: bold;
+
+      hr {
+        display: inline-block;
+        min-width: 120px;
+      }
+      span {
+        margin: 0 1em;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Roboto';
+    font-weight: 200;
+    label {
+      color: #BABABA;
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+  .right {
+    text-align: right;
+  }
+  .left {
+    text-align: left;
+  }
+
+  .img-note {
+    position: relative;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    margin-bottom: 2em;
+
+    .source {
+      color: #CFCFCF;
+    }
+    .title {
+      color: #2F303C;
+    }
+
+    li {
+      color: #898989;
+    }
+  }
+
+  .row {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 420px) {
+  .article .header {
+    .desc {
+      line-height: 1.2em;
+      .editor {
+        border-right: none;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .article {
+    margin: 0 5em;
+  }
+  .article .header {
+    padding-top: 5em;
+
+    h2 {
+      font-size: 1.2em;
+    }
+    h1 {
+      font-size: 3em;
+    }
+  }
+
+}

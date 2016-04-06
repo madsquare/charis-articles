@@ -1,0 +1,24 @@
+{
+  "name": "web-charis-articles",
+  "version": "0.1.0",
+  "description": "articles generator.",
+  "scripts": {},
+  "keywords": [],
+  "author": {
+    "name": "egg",
+    "email": "i@egg.pe.kr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:madsq/web-charis-articles.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell": "^1.2.1",
+    "matchdep": "^1.0.1"
+  },
+  "dependencies": {}
+}
