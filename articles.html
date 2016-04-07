@@ -6,6 +6,6 @@ layout: default
 
 <ul>
 {% for doc in site.articles %}
-  <li><a href="{{ doc.url }}">{{ doc.title }}</a></li>
+  <li><a href="{{ doc.url }}">{{ doc.layout }} - {{ doc.title }}</a></li>
 {% endfor %}
 </ul>
