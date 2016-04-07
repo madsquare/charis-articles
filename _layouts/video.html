@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<div class="article-wrapper">
+  <div class="article-box">
+    <div class="article video">
+      <div class="header">
+        <h2>charis article - video</h2>
+        <h1>{{ page.title }}<span>{{ page.subtitle }}</span></h1>
+
+        <div class="desc">
+          <p class="editor"><img src="{{ site.url }}/assets/img/ic_editor.png"><label>Editor</label> {{ page.author }}</p>
+          <p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="player-wrapper">
+              <div class="player">
+                <div id="player" class="video"><img src="img/{{ page.thumb }}"><a href="{{ page.source }}" class="mask play"><i><img src="{{ site.url }}/assets/img/ic_play.png"></i></a></div>
+              </div>
+            </div>
+            <p class="para">{{ page.description }}</p>
+          </div>
+        </div>
+
+        <div class="step">
+          {% for step in page.steps %}
+          <div class="row">
+            <div class="col-md-12">
+              <h4><label>{{ step.num }}</label>{{ step.title }}</h4>
+              {% if step.note %}
+              <p class="note">{{ step.note }}</p>
+              {% endif %}
+
+              <img src="img/{{ step.img }}">
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+          {{ content }}
+      </div>
+    </div>
+    <div class="box-line topleft"></div>
+    <div class="box-line topright"></div>
+    <div class="box-line bottomleft"></div>
+    <div class="box-line bottomright"></div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://hm.snackk.tv/dist/hummingbird.min.js"></script>
+<script type="text/javascript">
+$(document.body).ready(function () {
+  $('.video a.play').click(function (evt) {
+    var source = $(evt.target).closest('a').attr('href')
+    var player = new HM.Player('player', {
+      mode: {
+        showinfo: true,
+        controls: true,
+        autoplay: true
+      }
+    })
+    player.loadByUrl(source)
+    return false
+  })
+})
+</script>

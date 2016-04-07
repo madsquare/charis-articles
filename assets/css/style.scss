@@ -24,7 +24,7 @@ $screen-md-min: 992px;
 
 .article-wrapper,
 .article-box {
-  border: 2px solid #000;
+  border: 2px solid #333;
 }
 .article-wrapper {
   padding: $boxpadding 0;
@@ -32,6 +32,43 @@ $screen-md-min: 992px;
 .article-box {
   margin-left: -($boxpadding + 4);
   margin-right: -($boxpadding + 4);
+  position: relative;
+
+  .box-line {
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    background: #333;
+
+    &.topleft {
+      top: 0;
+      left: 0;
+      margin-top: -$boxpadding;
+      transform-origin: top left;
+      transform: rotate(45deg);
+    }
+    &.topright {
+      top: 0;
+      right: 0;
+      margin-top: -$boxpadding;
+      transform-origin: top right;
+      transform: rotate(-45deg);
+    }
+    &.bottomleft {
+      bottom: 0;
+      left: 0;
+      margin-bottom: -$boxpadding;
+      transform-origin: bottom left;
+      transform: rotate(-45deg);
+    }
+    &.bottomright {
+      bottom: 0;
+      right: 0;
+      margin-bottom: -$boxpadding;
+      transform-origin: bottom right;
+      transform: rotate(45deg);
+    }
+  }
 }
 
 .article {
@@ -64,6 +101,16 @@ $screen-md-min: 992px;
     font-size: 2.5em;
     font-weight: bold;
     font-family: 'Roboto Condensed';
+
+    span {
+      display: block;
+      color: #898989;
+      font-size: 0.9em;
+      font-style: italic;
+      font-family: Times;
+      letter-spacing: -0.8px;
+      padding-top: 0.5em;
+    }
   }
 
   .desc {
@@ -199,6 +246,88 @@ $screen-md-min: 992px;
 
   .row {
     margin-top: 2em;
+  }
+}
+
+.article {
+  &.video {
+    .player-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      width: 100%;
+      height: 0;
+
+      .player {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+    #player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    h4 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.5em;
+      line-height: 1.4em;
+
+      label {
+        display: block;
+        font-family: 'Roboto Condensed';
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 2em;
+        color: #D6000C;
+      }
+    }
+
+    .video {
+      position: relative;
+      img {
+        display: block;
+      }
+      a.mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.32);
+
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -2em;
+          margin-left: -2em;
+          width: 4em;
+          height: 4em;
+        }
+      }
+    }
+
+    .step {
+      text-align: center;
+      line-height: 1.8em;
+
+      p.note {
+        margin-top: 1em;
+        color: #898989;
+      }
+
+      img {
+        margin: 2em 0;
+      }
+    }
   }
 }
 
