@@ -10,7 +10,12 @@ layout: default
         <h1>{{ page.title }}<span>{{ page.subtitle }}</span></h1>
 
         <div class="desc">
+          {% if page.director %}
+          <p class="editor"><img src="{{ site.url }}/assets/img/ic_editor.png"><label>Director</label> {{ page.director }}</p>
+          {% endif %}
+          {% if page.author %}
           <p class="editor"><img src="{{ site.url }}/assets/img/ic_editor.png"><label>Editor</label> {{ page.author }}</p>
+          {% endif %}
           <p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
         </div>
       </div>
