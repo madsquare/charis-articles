@@ -33,7 +33,7 @@ encoding: 'utf-8'
 # plugins
 gems:
   - jekyll-textile-converter
-  - jekyll-sass-converter
+# github  - jekyll-sass-converter
 
 # conversion
 markdown: kramdown

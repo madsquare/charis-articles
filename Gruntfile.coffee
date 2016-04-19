@@ -39,12 +39,20 @@ module.exports = (grunt) ->
           port: 8080
           base: '_site'
 
+    sass:
+      dist:
+        options:
+          style: 'compressed'
+          loadPath: 'assets/css/_scss'
+          sourcemap: 'none'
+        files:
+          '_site/assets/css/style.css': 'assets/css/style.scss'
+
     watch:
       livereload:
         files: [
           '_config.yml'
           'articles.html'
-          'assets/css/**'
           '_layouts/**'
           '_articles/**'
           '_includes/**'
@@ -54,9 +62,21 @@ module.exports = (grunt) ->
         ]
         options:
           livereload: true
-
+      sass:
+        files: [
+          'assets/css/**'
+        ]
+        tasks: [
+          'sass:dist'
+        ]
+        options:
+          livereload: true
 
 
   grunt.initConfig config
-  grunt.registerTask 'default', ['shell', 'connect', 'open:dev', 'watch']
-  grunt.registerTask 'deploy', ['shell', 'aws_s3', 'open:magazine']
+  grunt.registerTask 'default', [
+    'shell', 'connect', 'sass', 'open:dev', 'watch'
+  ]
+  grunt.registerTask 'deploy', [
+    'shell', 'sass', 'aws_s3', 'open:magazine'
+  ]
