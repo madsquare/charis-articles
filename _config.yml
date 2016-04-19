@@ -31,8 +31,7 @@ keep_files:
 encoding: 'utf-8'
 
 # plugins
-gems:
-  - jekyll-textile-converter
+# gems:
 # github  - jekyll-sass-converter
 
 # conversion
