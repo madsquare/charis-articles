@@ -25,6 +25,7 @@ exclude:
   - node_modules
   - .gitignore
   - package.json
+  - deploy.json
   - Gruntfile.coffee
 keep_files:
 encoding: 'utf-8'
