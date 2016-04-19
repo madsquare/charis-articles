@@ -30,20 +30,5 @@ exclude:
 keep_files:
 encoding: 'utf-8'
 
-# plugins
-# gems:
-# github  - jekyll-sass-converter
-
 # conversion
 markdown: kramdown
-
-# serving
-port: 4000
-host: 127.0.0.1
-baseurl: '' # does not include hostname
-
-# outputting
-
-sass:
-  # style: :compressed
-  sass_dir: assets/css/_scss
