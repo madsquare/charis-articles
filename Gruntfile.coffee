@@ -52,13 +52,14 @@ module.exports = (grunt) ->
       livereload:
         files: [
           '_config.yml'
-          'articles.html'
+          '*.html'
           '_layouts/**'
           '_articles/**'
           '_includes/**'
         ]
         tasks: [
           'shell:jekyll'
+          'sass:dist'
         ]
         options:
           livereload: true

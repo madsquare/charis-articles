@@ -7,7 +7,6 @@ article 생성을 위한 repository. jekyll을 이용하여 static file 생성�
 
 * [RubyGem](https://rubygems.org/pages/download)
 * [jekyll](https://jekyllrb.com/docs/installation/)
-* [jekyll-textile-converter](https://github.com/jekyll/jekyll-textile-converter)
 
 
 ## Start
