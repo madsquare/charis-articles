@@ -40,7 +40,13 @@ layout: default
               <p class="note">{{ step.note }}</p>
               {% endif %}
 
+              {% for img in step.imgs %}
+              <img src="img/{{ img }}">
+              {% endfor %}
+
+              {% if step.img %}
               <img src="img/{{ step.img }}">
+              {% endif %}
             </div>
           </div>
           {% endfor %}

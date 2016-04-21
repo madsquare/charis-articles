@@ -5,7 +5,8 @@ layout: default
 <h3>articles</h3>
 
 <ul>
-{% for doc in site.articles %}
-  <li><a href="{{ doc.url }}">{{ doc.layout }} - {{ doc.title }}</a></li>
+{% assign articles = site.articles | sort: 'url' %}
+{% for doc in articles %}
+  <li><a href="{{ doc.url }}">{{ doc.url | split: '/' | slice: 4, 1 }} - {{ doc.title }}</a></li>
 {% endfor %}
 </ul>
