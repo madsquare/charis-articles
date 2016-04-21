@@ -32,3 +32,6 @@ encoding: 'utf-8'
 
 # conversion
 markdown: kramdown
+
+# content filter
+future: true
