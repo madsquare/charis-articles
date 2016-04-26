@@ -280,6 +280,9 @@ $screen-md-min: 992px;
     }
     .title {
       color: #2F303C;
+      span {
+        color: #CFCFCF;
+      }
     }
 
     li {
@@ -289,6 +292,9 @@ $screen-md-min: 992px;
 
   .row {
     margin-top: 2em;
+    &.layout {
+      margin-top: 0;
+    }
   }
 }
 
@@ -389,6 +395,23 @@ $screen-md-min: 992px;
 @media (min-width: 768px) {
   .article {
     margin: 0 5em;
+
+
+    .img-note {
+      &.top100 {
+        position: relative;
+        top: 100px;
+        z-index: 1;
+      }
+      &.bottom50 {
+        position: relative;
+        bottom: 50px;
+        z-index: 1;
+      }
+      &.alignleft {
+        text-align: left;
+      }
+    }
   }
   .article .header {
     padding-top: 5em;
