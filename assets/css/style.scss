@@ -145,11 +145,13 @@ $screen-md-min: 992px;
     max-width: 100%;
   }
 
-  ol.note {
+  ol.note,
+  ul.note {
     margin: 0;
     padding: 0;
   }
-  ol.note li {
+  ol.note li,
+  ul.note li {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -163,9 +165,37 @@ $screen-md-min: 992px;
     }
   }
 
+  ol.step,
+  ul.step {
+    margin: 0;
+    padding: 0;
+  }
+  ol.step li,
+  ul.step li {
+    margin-left: 20px;
+    padding: 0;
+    list-style: none;
+    line-height: 2.2em;
+
+    label {
+      display: inline-block;
+      width: 20px;
+      margin-left: -20px;
+    }
+  }
+
   p.para {
     margin: 1.5em 0;
     white-space: pre-wrap;
+
+    &.center {
+      margin: 1.5em auto;
+    }
+
+    a {
+      color: #E7505A;
+      text-decoration: none;
+    }
   }
 
   hr {
@@ -218,11 +248,14 @@ $screen-md-min: 992px;
 
   h3 {
     margin: 0;
+    margin-bottom: 1em;
     font-size: 1.5em;
     font-family: 'Roboto';
     font-weight: 200;
     label {
       color: #BABABA;
+    }
+    &.title {
     }
   }
 
