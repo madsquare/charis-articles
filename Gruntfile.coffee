@@ -4,6 +4,7 @@ module.exports = (grunt) ->
 
   config =
     aws: grunt.file.readJSON 'deploy.json'
+    charis: grunt.file.readJSON 'charis.json'
     aws_s3:
       options:
         accessKeyId: '<%= aws.accessKeyId %>'
@@ -48,6 +49,26 @@ module.exports = (grunt) ->
         files:
           '_site/assets/css/style.css': 'assets/css/style.scss'
 
+    http:
+      sync:
+        options:
+          url: '<%= charis.endpoint %>'
+          method: 'PUT'
+          headers:
+            Authorization: (()->
+              md5 = require('md5')
+              charis = grunt.file.readJSON 'charis.json'
+
+              ts = Date.now()
+              token = new Buffer([
+                charis.clientId,
+                md5(charis.clientSecret + ts),
+                ts
+              ].join(':')).toString('base64')
+
+              return 'Basic ' + token
+            )()
+
     watch:
       livereload:
         files: [
@@ -79,5 +100,5 @@ module.exports = (grunt) ->
     'shell', 'connect', 'sass', 'open:dev', 'watch'
   ]
   grunt.registerTask 'deploy', [
-    'shell', 'sass', 'aws_s3', 'open:magazine'
+    'shell', 'sass', 'aws_s3', 'http:sync', 'open:magazine'
   ]

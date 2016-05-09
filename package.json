@@ -19,9 +19,11 @@
     "grunt-contrib-connect": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-http": "^2.0.1",
     "grunt-open": "^0.2.3",
     "grunt-shell": "^1.2.1",
-    "matchdep": "^1.0.1"
+    "matchdep": "^1.0.1",
+    "md5": "^2.1.0"
   },
   "dependencies": {}
 }

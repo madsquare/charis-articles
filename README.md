@@ -32,3 +32,12 @@ deploy 위해서는 aws s3 업로드 가능한 권한을 가진 profile 정보 �
     "region": ""
 }
 ```
+
+## charis.json
+```json
+{
+  "endpoint": "",
+  "clientId": "",
+  "clientSecret": ""
+}
+```
