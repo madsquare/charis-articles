@@ -7,6 +7,16 @@ layout: default
 <ul>
 {% assign articles = site.articles | sort: 'url' %}
 {% for doc in articles %}
-  <li><a href="{{ doc.url }}">{{ doc.url | replace: '.html', '' | replace: '/articles', '' }} - {{ doc.title }}</a></li>
+  <li><a href="{{ doc.url }}"
+    id="{{ doc.url | replace: '.html', '' | replace: '/articles', '' | replace: '/', '' | replace: '-', '' }}"
+    data-lang="{{ doc.url | replace: '.html', '' | split: '/' | slice: 4, 1 }}"
+    data-category="{{ doc.category | join: '||' | toLowerCase }}"
+    data-banner="{{ doc.banner }}"
+    data-summary="{{ doc.summary }}"
+    data-grid-width="{{ doc.grid_width }}"
+    data-grid-height="{{ doc.grid_height }}"
+    data-grid-type="{{ doc.grid_type }}"
+    data-date="{{ doc.date | date_to_xmlschema }}"
+  >{{ doc.url | replace: '.html', '' | replace: '/articles', '' }} - <span>{{ doc.title }}</span></a></li>
 {% endfor %}
 </ul>
