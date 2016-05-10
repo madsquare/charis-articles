@@ -11,7 +11,7 @@ layout: default
     id="{{ doc.url | replace: '.html', '' | replace: '/articles', '' | replace: '/', '' | replace: '-', '' }}"
     data-lang="{{ doc.url | replace: '.html', '' | split: '/' | slice: 4, 1 }}"
     data-category="{{ doc.category | join: '||' | toLowerCase }}"
-    data-banner="{{ doc.banner }}"
+    data-banner="{{ doc.banner || doc.thumb }}"
     data-summary="{{ doc.summary }}"
     data-grid-width="{{ doc.grid_width }}"
     data-grid-height="{{ doc.grid_height }}"
