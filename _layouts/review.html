@@ -6,7 +6,7 @@ layout: default
   <div class="article-box">
     <div class="article video">
       <div class="header">
-        <h2>K - Beauty Magazine - {{ page.category | join: ', '}}</h2>
+        <h2>K - Beauty Magazine - {{ page.category | join: ', ' }}</h2>
         <h1>{{ page.title }}<span>{{ page.subtitle }}</span></h1>
 
         <div class="desc">
@@ -27,7 +27,10 @@ layout: default
                 <div id="player" class="video"><img src="img/{{ page.thumb }}"><a href="{{ page.source }}" class="mask play"><i><img src="{{ site.url }}/assets/img/ic_play.png"></i></a></div>
               </div>
             </div>
-            <p class="para">{{ page.description }}</p>
+            <p class="para center">{{ page.description }}</p>
+            {% if page.shop %}
+            <p class="shop center"><label>{{ page.shop.name }}</label> <a href="{{ page.shop.link }}" target="_blank">{{ page.shop.link }}</a></p>
+            {% endif %}
           </div>
         </div>
 
