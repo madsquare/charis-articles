@@ -100,5 +100,8 @@ module.exports = (grunt) ->
     'shell', 'connect', 'sass', 'open:dev', 'watch'
   ]
   grunt.registerTask 'deploy', [
-    'shell', 'sass', 'aws_s3', 'http:sync', 'open:magazine'
+    'shell', 'sass', 'aws_s3', 'open:magazine'
+  ]
+  grunt.registerTask 'sync', [
+    'http:sync'
   ]
