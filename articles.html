@@ -17,6 +17,7 @@ layout: default
     data-grid-height="{{ doc.grid_height }}"
     data-grid-type="{{ doc.grid_type }}"
     data-date="{{ doc.date | date_to_xmlschema }}"
+    data-source="{{ doc.source }}"
   >{{ doc.url | replace: '.html', '' | replace: '/articles', '' }} - <span>{{ doc.title }}</span></a></li>
 {% endfor %}
 </ul>

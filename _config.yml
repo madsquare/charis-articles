@@ -1,3 +1,4 @@
+baseurl: 'http://magazine.hicharis.net'
 source: .
 destination: ./_site
 plugins_dir: ./_plugins
