@@ -191,6 +191,9 @@ $screen-md-min: 992px;
     &.center {
       margin: 1.5em auto;
     }
+    &.nomargin {
+      margin: 0;
+    }
 
     a {
       color: #E7505A;
@@ -257,6 +260,13 @@ $screen-md-min: 992px;
     }
     &.title {
     }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
   }
 
   .center {
@@ -337,7 +347,6 @@ $screen-md-min: 992px;
         color: #D6000C;
       }
     }
-
     .video {
       position: relative;
       img {
