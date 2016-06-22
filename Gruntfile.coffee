@@ -27,7 +27,7 @@ module.exports = (grunt) ->
         path: 'http://127.0.0.1:8080/articles.html'
         app: 'Google Chrome'
       magazine:
-        path: 'http://magazine.hicharis.net/articles.html'
+        path: 'https://magazine.hicharis.net/articles.html'
         app: 'Google Chrome'
 
     shell:
