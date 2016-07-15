@@ -331,6 +331,7 @@ $screen-md-min: 992px;
       left: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
     h4 {
       margin: 0;
@@ -351,6 +352,7 @@ $screen-md-min: 992px;
       position: relative;
       img {
         display: block;
+        margin: 0 auto;
       }
       a.mask {
         position: absolute;
