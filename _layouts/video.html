@@ -66,8 +66,9 @@ layout: default
 <script src="https://hm.snackk.tv/dist/hummingbird.min.js"></script>
 <script type="text/javascript">
 $(document.body).ready(function () {
-  $('.video a.play').click(function (evt) {
-    var source = $(evt.target).closest('a').attr('href')
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  var loadPlayer = function (target) {
+    var source = $(target).closest('a').attr('href')
     var player = new HM.Player('player', {
       mode: {
         showinfo: true,
@@ -76,7 +77,16 @@ $(document.body).ready(function () {
       }
     }, true)
     player.loadByUrl(source)
-    return false
-  })
+  }
+
+  if (isMobile) {
+    loadPlayer('.video a.play')
+  } else {
+    $('.video a.play').click(function (evt) {
+      loadPlayer(evt.target)
+      
+      return false
+    })
+  }
 })
 </script>
