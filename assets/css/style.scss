@@ -395,6 +395,37 @@ $screen-md-min: 992px;
       }
     }
   }
+
+  &.celeb {
+    .row.links {
+      margin-top: 0.5em;
+      text-align: center;
+
+      .links {
+        margin-top: 1em;
+      }
+
+      dt, dd {
+        display: inline-block;
+      }
+      dl {
+        margin: 0.3em 0;
+      }
+      dd {
+        margin: 0;
+      }
+      .shop-links {
+        dt:after {
+          content: ' - ';
+        }
+      }
+      .sns-links {
+        dt:after {
+          content: ' : ';
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 420px) {

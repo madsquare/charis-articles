@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="article-wrapper">
+  <div class="article-box">
+    <div class="article celeb">
+      <div class="header">
+        <h2>Beauty Magazine - {{ page.category | join: ', ' }}</h2>
+        <h1>{{ page.title }}<span>{{ page.subtitle }}</span></h1>
+
+        <div class="desc">
+          {% if page.director %}
+          <p class="editor"><img src="{{ site.url }}/assets/img/ic_editor.png"><label>Director</label> {{ page.director }}</p>
+          {% endif %}
+          {% if page.author %}
+          <p class="editor"><img src="{{ site.url }}/assets/img/ic_editor.png"><label>Editor</label> {{ page.author }}</p>
+          {% endif %}
+          <p class="date">{{ page.date | date: '%B %d, %Y' }}</p>
+        </div>
+      </div>
+      <div class="content">
+        {{ content }}
+
+        <div class="row links">
+          <div class="col-md-12 links shop-links">
+            {% for link in page.shops.items %}
+            <dl>
+              <dt>{{ link.name }}</dt>
+              <dd><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></dd>
+            </dl>
+            {% endfor %}
+          </div>
+          <div class="col-md-12 links sns-links">
+            {% if page.sns %}
+            <p>{{ page.sns.title }}</p>
+            {% endif %}
+            {% for link in page.sns.items %}
+            <dl>
+              <dt>{{ link.name }}</dt>
+              <dd><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></dd>
+            </dl>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box-line topleft"></div>
+    <div class="box-line topright"></div>
+    <div class="box-line bottomleft"></div>
+    <div class="box-line bottomright"></div>
+  </div>
+</div>
