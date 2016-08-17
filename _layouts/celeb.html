@@ -4,7 +4,7 @@ layout: default
 
 <div class="article-wrapper">
   <div class="article-box">
-    <div class="article celeb">
+    <div class="article celeb video">
       <div class="header">
         <h2>Beauty Magazine - {{ page.category | join: ', ' }}</h2>
         <h1>{{ page.title }}<span>{{ page.subtitle }}</span></h1>
@@ -20,6 +20,14 @@ layout: default
         </div>
       </div>
       <div class="content">
+        {% if page.source %}
+        <div class="player-wrapper">
+          <div class="player">
+            <div id="player" class="video"><img src="img/{{ page.thumb }}"><a href="{{ page.source }}" class="mask play"><i><img src="{{ site.url }}/assets/img/ic_play.png"></i></a></div>
+          </div>
+        </div>
+        {% endif %}
+
         {{ content }}
 
         <div class="row links">
@@ -51,3 +59,35 @@ layout: default
     <div class="box-line bottomright"></div>
   </div>
 </div>
+
+{% if page.source %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+<script src="https://hm.snackk.tv/dist/hummingbird.min.js"></script>
+<script type="text/javascript">
+$(document.body).ready(function () {
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  var loadPlayer = function (target) {
+    var source = $(target).closest('a').attr('href')
+    var player = new HM.Player('player', {
+      mode: {
+        showinfo: true,
+        controls: true,
+        autoplay: true
+      }
+    }, true)
+    player.loadByUrl(source)
+  }
+
+  if (isMobile) {
+    loadPlayer('.video a.play')
+  } else {
+    $('.video a.play').click(function (evt) {
+      loadPlayer(evt.target)
+
+      return false
+    })
+  }
+})
+</script>
+{% endif %}
