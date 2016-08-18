@@ -3,5 +3,3 @@ node_modules
 .sass-cache
 deploy.json
 charis.json
-
-*.html
