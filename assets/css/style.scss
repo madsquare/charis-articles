@@ -309,6 +309,9 @@ $screen-md-min: 992px;
 }
 
 .article {
+  a {
+    word-break: break-all;
+  }
   &.video {
     .player-wrapper {
       position: relative;
