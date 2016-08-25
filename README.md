@@ -43,7 +43,13 @@ deploy 위해서는 aws s3 업로드 가능한 권한을 가진 profile 정보 �
 ```
 
 
-사이트 등록
-## 업로드 : 터미널 >> Ctrl+C >> grunt deploy 업로드
-## 서버 등록 : charis.json >> grunt sync 실서버 반영
-## 라이언 메모 : 오류가 날 때에는 처음과 끝이 잘 가두어져 있는지 확인하자 ''
+## FAQ
+
+* 터미널 >> Ctrl+C >> grunt deploy 업로드
+* 서버 등록 : charis.json >> grunt sync 실서버 반영
+* 오류가 날 때에는 처음과 끝이 잘 가두어져 있는지 확인하자 ''
+
+
+## Copyright
+
+Copyright(c) 2016 MADSquare Inc. All rights reserved. 
