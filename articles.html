@@ -18,6 +18,7 @@ layout: default
     data-grid-type="{{ doc.grid_type }}"
     data-date="{{ doc.date | date_to_xmlschema }}"
     data-source="{{ doc.source }}"
+    data-seller-url="{{ doc.seller_url }}"
   >{{ doc.url | replace: '.html', '' | replace: '/articles', '' }} - <span>{{ doc.title }}</span></a></li>
 {% endfor %}
 </ul>
